@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux"; // Import useDispatch hook
+import { useDispatch } from "react-redux";
 import { addTransaction } from "../../redux/actions";
-
+import "./Tracker.css"; // Import CSS file for styling
 
 const Tracker = () => {
-  const dispatch = useDispatch(); // Initialize useDispatch hook
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     type: "",
@@ -26,7 +26,6 @@ const Tracker = () => {
         `https://mock-evl-2.onrender.com/transactions`,
         formData
       );
-      // Dispatch the addTransaction action after successful request
       dispatch(addTransaction(response.data));
       alert("Transaction created successfully!");
       setFormData({
@@ -42,11 +41,11 @@ const Tracker = () => {
   };
 
   return (
-    <div>
+    <div className="tracker-container">
       <h3>Tracker Component</h3>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Type:
+      <form onSubmit={handleSubmit} className="tracker-form">
+        <div className="form-group">
+          <label>Type:</label>
           <select
             name="type"
             value={formData.type}
@@ -56,9 +55,9 @@ const Tracker = () => {
             <option value="Income">Income</option>
             <option value="Expense">Expense</option>
           </select>
-        </label>
-        <label>
-          Category:
+        </div>
+        <div className="form-group">
+          <label>Category:</label>
           <select
             name="category"
             value={formData.category}
@@ -83,26 +82,26 @@ const Tracker = () => {
               </optgroup>
             )}
           </select>
-        </label>
-        <label>
-          Amount in Rupees:
+        </div>
+        <div className="form-group">
+          <label>Amount in Rupees:</label>
           <input
             type="number"
             name="amount"
             value={formData.amount}
             onChange={handleInputChange}
           />
-        </label>
-        <label>
-          Date:
+        </div>
+        <div className="form-group">
+          <label>Date:</label>
           <input
             type="date"
             name="date"
             value={formData.date}
             onChange={handleInputChange}
           />
-        </label>
-        <button type="submit">Create</button>
+        </div>
+        <button type="submit" className="submit-button">Create</button>
       </form>
     </div>
   );

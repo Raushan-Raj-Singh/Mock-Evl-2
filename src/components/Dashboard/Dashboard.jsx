@@ -15,13 +15,13 @@ const Dashboard = () => {
     <div>
       <h1>Dashboard</h1>
       <div>
-        <button onClick={() => handleComponentChange("Tracker")}>
+        <button style={{height:"30px", width:"100px", backgroundColor:"green", border:"none", borderRadius:"5px", marginRight:"20px"}} onClick={() => handleComponentChange("Tracker")}>
           Tracker
         </button>
-        <button onClick={() => handleComponentChange("Analytics")}>
+        <button style={{height:"30px", width:"100px", backgroundColor:"green", border:"none", borderRadius:"5px", marginRight:"20px"}} onClick={() => handleComponentChange("Analytics")}>
           Analytics
         </button>
-        <button onClick={() => handleComponentChange("History")}>
+        <button style={{height:"30px", width:"100px", backgroundColor:"green", border:"none", borderRadius:"5px", marginRight:"20px"}} onClick={() => handleComponentChange("History")}>
           History
         </button>
       </div>

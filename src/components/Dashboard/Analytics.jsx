@@ -3,16 +3,15 @@ import axios from "axios";
 import { Pie } from "react-chartjs-2";
 
 const Analytics = () => {
-  const [incomeData, setIncomeData] = useState([]);
+  const [incomeData, setIncomeData] = useState(null);
 
   useEffect(() => {
     const fetchAnalyticsData = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/transactions`
+          "https://mock-evl-2.onrender.com/transactions"
         );
         const data = response.data;
-        console.log("Received data:", data);
 
         // Extract income data from the received data
         const incomeTransactions = data.filter(
@@ -21,10 +20,10 @@ const Analytics = () => {
 
         // Calculate total income amount
         const totalIncome = incomeTransactions.reduce(
-          (acc, curr) => acc + curr.amount,
+          
+            (acc, curr) => acc + parseFloat(curr.amount), // Ensure amount is parsed as a float
           0
         );
-        console.log(totalIncome);
 
         // Create data object for Pie chart
         const incomeChartData = {
@@ -32,12 +31,11 @@ const Analytics = () => {
           datasets: [
             {
               label: "Income vs Expense",
-              data: [totalIncome, 0], // Assuming total expense is 0
+              data: [totalIncome, 0], // Assuming total expense is 0 for now
               backgroundColor: ["green", "red"],
             },
           ],
         };
-        console.log("40", incomeChartData.datasets.data);
 
         setIncomeData(incomeChartData);
       } catch (error) {
@@ -46,14 +44,14 @@ const Analytics = () => {
     };
 
     fetchAnalyticsData();
-  }, []); // Empty dependency array to run only once after initial render
-  console.log(incomeData);
+  }, []);
+
   return (
     <div>
       <h3>Analytics Component</h3>
       <div>
         <h4>Income & Expense Chart</h4>
-        <Pie data={incomeData ? incomeData : null} />
+        {incomeData && <Pie data={incomeData} />} {/* Conditionally render Pie component */}
       </div>
     </div>
   );

@@ -55,7 +55,7 @@ const History = () => {
   return (
     <div>
       <h3>History Component</h3>
-      <div>
+      <div className="filters">
         <label>
           Filter by Type:
           <select value={filterType} onChange={handleFilterChange}>
@@ -72,13 +72,13 @@ const History = () => {
           </select>
         </label>
       </div>
-      <div>
+      <div className="transaction-container">
         {sortedTransactions.map((transaction) => (
-          <div key={transaction.id}>
-            <p>Type: {transaction.type}</p>
-            <p>Category: {transaction.category}</p>
-            <p>Amount: {transaction.amount}</p>
-            <p>Date: {transaction.date}</p>
+          <div key={transaction.id} className="transaction-card">
+            <p><strong>Type:</strong> {transaction.type}</p>
+            <p><strong>Category:</strong> {transaction.category}</p>
+            <p><strong>Amount:</strong> {transaction.amount}</p>
+            <p><strong>Date:</strong> {transaction.date}</p>
             <button onClick={() => handleDeleteTransaction(transaction.id)}>
               Delete
             </button>

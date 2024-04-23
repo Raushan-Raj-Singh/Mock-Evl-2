@@ -25,6 +25,7 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signup(userData, navigate));
+    alert("User created successfully!");
   };
 
   return (

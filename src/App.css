@@ -72,3 +72,38 @@ form{
   display: block;
   text-decoration: none;
 }
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.transaction-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.transaction-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.transaction-card p {
+  margin: 5px 0;
+}
+
+.transaction-card button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.transaction-card button:hover {
+  background-color: #d32f2f;
+}

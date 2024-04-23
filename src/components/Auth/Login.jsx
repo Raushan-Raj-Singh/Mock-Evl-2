@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../redux/actions';
 
 function Login() {
@@ -13,6 +13,7 @@ function Login() {
     const handleLogin = (e) => {
       e.preventDefault();
       dispatch(login({ email, password }, navigate));
+      alert("You are successfully Loggedin");
     };
   return (
     <div className="login">
@@ -51,7 +52,7 @@ function Login() {
 
       />
     </form>
-    <a className="link" href="/signup">Sign Up</a>
+    <Link className="link" to="/signup">Sign Up</Link>
   </div>
   )
 }
