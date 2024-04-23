@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Juliet Oma",
+      "email": "julie@yahoo.com",
+      "password": "julie"
+    },
+    {
+      "id": 2,
+      "name": "James Williams",
+      "email": "jameswilly@gmail.com",
+      "password": "james"
+    },
+    {
+      "id": 3,
+      "name": "Ahmed Ali",
+      "email": "ahmedali012@gmail.com",
+      "password": "ahmed"
+    },
+    {
+      "id": 4,
+      "name": "Grace Funsho",
+      "email": "gracefunsho@gmail.com",
+      "password": "grace"
+    },
+    {
+      "id": "6e09",
+      "name": "xyz",
+      "email": "xyz@gmail.com",
+      "password": "xyz"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "userId": 1,
+      "type": "Income",
+      "category": "Salary",
+      "amount": 20000,
+      "date": "2024-04-20"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "type": "Expense",
+      "category": "Food & Drinks",
+      "amount": 2000,
+      "date": "2024-04-21"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "type": "Income",
+      "category": "Salary",
+      "amount": 60000,
+      "date": "2024-04-22"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "type": "Expense",
+      "category": "Shopping",
+      "amount": 3000,
+      "date": "2024-04-23"
+    }
+  ]
+}
